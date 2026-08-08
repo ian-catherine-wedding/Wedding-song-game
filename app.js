@@ -172,5 +172,26 @@ document.getElementById("backButton").addEventListener("click", () => {
 document.getElementById("lockButton").addEventListener("click", claimSong);
 document.getElementById("doneButton").addEventListener("click", closeModal);
 
-loadClaims();
-setInterval(loadClaims, 5000);
+async function loadClaims() {
+  try {
+    const { data, error } = await supabaseClient
+      .from("song_claims")
+      .select("song_id, guest_name, claimed_at");
+
+    if (error) throw error;
+
+    claims = Object.fromEntries(
+      (data || []).map(r => [
+        String(r.song_id),
+        {
+          name: r.guest_name,
+          claimedAt: r.claimed_at
+        }
+      ])
+    );
+
+    render();
+  } catch (err) {
+    console.error("Could not load claims", err);
+  }
+}
