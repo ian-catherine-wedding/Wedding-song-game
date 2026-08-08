@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f4eee7">
+  <title>Ian & Catherine — Pick Our Wedding Song</title>
+  <meta name="description" content="Pick a song for Ian & Catherine's wedding. Once it's gone, it's gone.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="petal p1"></div><div class="petal p2"></div><div class="petal p3"></div>
+  <header class="hero">
+    <div class="eyebrow">IAN & CATHERINE · 11 SEPTEMBER</div>
+    <h1>Pick Our<br><em>Wedding Song</em></h1>
+    <p class="intro">Choose one of 250 songs, make your payment, then lock it in. Once a song is taken, it’s gone.</p>
+    <div class="stats">
+      <div><strong id="availableCount">250</strong><span>available</span></div>
+      <div class="divider"></div>
+      <div><strong id="claimedCount">0</strong><span>claimed</span></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="search-wrap">
+      <label class="search-box">
+        <span>⌕</span>
+        <input id="searchInput" type="search" placeholder="Search song or artist..." autocomplete="off">
+      </label>
+      <div class="filters">
+        <button class="chip active" data-filter="all">All songs</button>
+        <button class="chip" data-filter="available">Available</button>
+        <button class="chip" data-filter="claimed">Taken</button>
+      </div>
+    </section>
+
+    <section class="song-list" id="songList" aria-live="polite"></section>
+    <div id="emptyState" class="empty hidden">No songs found. Try another search.</div>
+  </main>
+
+  <footer>
+    <div class="monogram">I <span>&</span> C</div>
+    <p>Made for one very good party.</p>
+  </footer>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="close" id="closeModal" aria-label="Close">×</button>
+      <div id="stepChoose">
+        <div class="modal-kicker">YOU’VE PICKED</div>
+        <h2 id="modalTitle"></h2>
+        <p id="modalArtist" class="artist"></p>
+        <div class="price-card">
+          <span>Wedding song entry</span>
+          <strong>£2</strong>
+        </div>
+        <a id="payButton" class="primary" href="https://monzo.me/ianroberts72?h=2G3vbL&account_type=personal" target="_blank" rel="noopener">Pay £2 with Monzo</a>
+        <p class="tiny">Monzo opens in a new tab. Once you've paid, come back here to lock in your song.</p>
+        <button id="paidButton" class="secondary">I’ve paid — continue</button>
+      </div>
+
+      <div id="stepName" class="hidden">
+        <div class="modal-kicker">ONE LAST THING</div>
+        <h2>Who picked it?</h2>
+        <p class="artist">Add your name so Ian & Catherine know who chose the song.</p>
+        <label class="field">
+          <span>Your name</span>
+          <input id="guestName" maxlength="40" placeholder="e.g. Sarah & Dave" autocomplete="name">
+        </label>
+        <button id="lockButton" class="primary button">Lock in my song</button>
+        <button id="backButton" class="text-button">← Back</button>
+      </div>
+
+      <div id="stepDone" class="hidden done">
+        <div class="tick">✓</div>
+        <div class="modal-kicker">LOCKED IN</div>
+        <h2 id="doneTitle"></h2>
+        <p>Nice one. That song is now off the board.</p>
+        <button id="doneButton" class="primary button">Back to the songs</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="songs.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
