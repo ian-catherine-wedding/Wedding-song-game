@@ -19,11 +19,12 @@ const guestName = document.getElementById("guestName");
 
 function headers(extra = {}) {
   return {
-    
     "apikey": SUPABASE_KEY,
-    ...extra 
+    "Authorization": `Bearer ${SUPABASE_KEY}`,
+    ...extra
   };
-} 
+}
+
 
 
 
