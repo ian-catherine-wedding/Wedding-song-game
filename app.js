@@ -2,6 +2,8 @@
 const songs = window.WEDDING_SONGS || [];
 const SUPABASE_URL = "https://udgjglcwbjkrjzclxdg.supabase.co";
 const SUPABASE_KEY = "sb_publishable_3l9YQHJYSMn4EUUGbB8MZA_p2P_Ydxw";
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
 let selectedSong = null;
 let filter = "all";
 let claims = {};
