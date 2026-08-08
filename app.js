@@ -138,7 +138,7 @@ async function claimSong() {
     render();
   } catch (err) {
     console.error("Claim failed", err);
-    alert("Something went wrong while locking in the song. Please try again.");
+    alert( err.message);
   } finally {
     lockButton.disabled = false;
     lockButton.textContent = "Lock in my song";
