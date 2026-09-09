@@ -345,51 +345,135 @@
 
   <!-- TABLE CHALLENGES -->
 
-  <section id="challengesPage" class="page hidden">
+ <section id="challengesPage" class="page hidden">
 
-    <header class="hero sub-hero">
+  <header class="hero sub-hero">
 
-      <button class="back-home">← WedPlay</button>
+    <button class="back-home">← WedPlay</button>
 
-      <div class="eyebrow">
-        GAME 04
-      </div>
+    <div class="eyebrow">
+      GAME 04
+    </div>
 
-      <h1>
-        Table<br>
-        <em>Challenges</em>
-      </h1>
+    <h1>
+      Table<br>
+      <em>Challenges</em>
+    </h1>
 
-      <p class="intro">
-        Work together, get involved and give your table captain
-        something to actually captain.
-      </p>
+    <p class="intro">
+      Seven tables. Seven missions.
+      Pick your table, get everyone involved and prove yours is the best.
+    </p>
 
-    </header>
+  </header>
 
+  <main class="challenges-main">
 
-    <main>
+    <div id="challengeSetup">
 
-      <div class="coming-card">
+      <div class="challenge-card">
 
-        <span class="coming-number">04</span>
+        <div class="challenge-kicker">
+          FIRST THINGS FIRST
+        </div>
 
-        <h2>Your Table's Mission</h2>
+        <h2>Which table are you on?</h2>
 
         <p>
-          Complete as many challenges as possible during the wedding.
+          Your table gets its own challenge list.
+          The captain is responsible for making sure you actually do them.
         </p>
 
-        <div class="coming-badge">
-          COMING NEXT
+        <label>
+          Your name
+        </label>
+
+        <input
+          id="challengeName"
+          maxlength="60"
+          placeholder="e.g. Dave"
+        >
+
+        <label>
+          Table number
+        </label>
+
+        <select id="challengeTable">
+
+          <option value="">
+            Choose your table...
+          </option>
+
+          <option value="1">Table 1</option>
+          <option value="2">Table 2</option>
+          <option value="3">Table 3</option>
+          <option value="4">Table 4</option>
+          <option value="5">Table 5</option>
+          <option value="6">Table 6</option>
+          <option value="7">Table 7</option>
+
+        </select>
+
+        <button
+          id="loadChallenges"
+          class="primary button">
+          Show our challenges
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div
+      id="challengeGame"
+      class="hidden">
+
+      <div class="challenge-progress">
+
+        <div>
+          <span class="challenge-small">
+            YOUR TABLE
+          </span>
+
+          <strong id="challengeTableTitle">
+            Table
+          </strong>
+        </div>
+
+        <div class="challenge-score">
+          <strong id="challengeCompleted">
+            0
+          </strong>
+          <span>/ 5 completed</span>
         </div>
 
       </div>
 
-    </main>
 
-  </section>
+      <div id="challengeList"></div>
 
+
+      <div class="challenge-card challenge-footer-card">
+
+        <p>
+          Captain's rule: if your table loses,
+          it's obviously your fault.
+        </p>
+
+        <button
+          id="challengeHome"
+          class="secondary button">
+          Back to WedPlay
+        </button>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</section>
 
   <!-- FOOTER -->
 

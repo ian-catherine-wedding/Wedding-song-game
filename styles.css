@@ -768,4 +768,127 @@ footer p{
 
 .prediction-success .tick{
   margin-bottom:16px;
+}/* TABLE CHALLENGES */
+
+.challenges-main{
+  max-width:720px;
+  margin:auto;
+  padding:10px 16px 60px;
+}
+
+.challenge-card{
+  background:rgba(255,250,245,.88);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:20px;
+  margin-bottom:14px;
+  box-shadow:0 8px 30px rgba(72,61,51,.05);
+}
+
+.challenge-kicker,
+.challenge-small{
+  font-size:10px;
+  letter-spacing:.15em;
+  font-weight:800;
+  color:var(--sage);
+}
+
+.challenge-card h2{
+  font-family:"Playfair Display",serif;
+  font-size:30px;
+  margin:8px 0 10px;
+}
+
+.challenge-card p{
+  color:var(--muted);
+  line-height:1.55;
+}
+
+.challenge-card label{
+  display:block;
+  font-size:12px;
+  font-weight:700;
+  margin:14px 0 7px;
+}
+
+.challenge-card input,
+.challenge-card select{
+  width:100%;
+  min-height:52px;
+  border:1px solid var(--line);
+  background:white;
+  border-radius:13px;
+  padding:0 14px;
+  font-size:16px;
+  color:var(--ink);
+  outline:none;
+  margin-bottom:12px;
+}
+
+.challenge-progress{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  margin-bottom:14px;
+}
+
+.challenge-progress strong{
+  display:block;
+  font-family:"Playfair Display",serif;
+  font-size:26px;
+}
+
+.challenge-score{
+  text-align:right;
+}
+
+.challenge-score span{
+  font-size:11px;
+  color:var(--muted);
+}
+
+.challenge-item{
+  background:rgba(255,250,245,.9);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:16px;
+  margin-bottom:10px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:12px;
+  align-items:center;
+}
+
+.challenge-item h3{
+  margin:0 0 4px;
+  font-family:"Playfair Display",serif;
+  font-size:19px;
+}
+
+.challenge-item p{
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.45;
+}
+
+.challenge-complete{
+  border:0;
+  border-radius:999px;
+  padding:9px 12px;
+  background:var(--sage-dark);
+  color:white;
+  font-size:11px;
+  font-weight:800;
+}
+
+.challenge-complete.done{
+  background:#d5ccc3;
+  color:#716a63;
+}
+
+.challenge-footer-card{
+  text-align:center;
+  margin-top:18px;
 }
