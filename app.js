@@ -587,8 +587,7 @@ let activeChallengeTable = null;
 let completedChallenges = new Set();
 
 if (loadChallengesButton) {
-  loadChallengesButton.addEventListener("click", () => {
-
+  loadChallengesButton.addEventListener("click", async () => {
     const name =
       document.getElementById("challengeName").value.trim();
 
@@ -598,12 +597,26 @@ if (loadChallengesButton) {
     if (!name || !table) {
       alert("We need your name and table number first 😂");
       return;
-    }
+    }const { data: completedData, error: completedError } =
+  await supabaseClient.rpc("get_completed_challenges", {
+    p_guest_name: name,
+    p_table_number: Number(table)
+  });
+
+if (completedError) {
+  console.error("Could not load completed challenges", completedError);
+  alert("Couldn't load your previous progress. Try again.");
+  return;
+}
+
+completedChallenges = new Set(
+  (completedData || []).map(row => Number(row.challenge_number))
+);
 
     activeChallengeName = name;
     activeChallengeTable = Number(table);
 
-    completedChallenges = new Set();
+    
 
     challengeSetup.classList.add("hidden");
     challengeGame.classList.remove("hidden");
@@ -612,7 +625,7 @@ if (loadChallengesButton) {
       "challengeTableTitle"
     ).textContent = `Table ${activeChallengeTable}`;
 
-    challengeCompleted.textContent = "0";
+    challengeCompleted.textContent = completedChallenges.size;
 
     renderChallenges();
   });
