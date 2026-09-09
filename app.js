@@ -333,3 +333,73 @@ document
   .addEventListener("click", closeModal);
 
 loadClaims();
+
+// WEDDING PREDICTIONS
+
+const submitPredictions = document.getElementById("submitPredictions");
+
+if (submitPredictions) {
+  submitPredictions.addEventListener("click", async () => {
+
+    const name = document.getElementById("predName").value.trim();
+    const table = document.getElementById("predTable").value;
+
+    const q1 = document.getElementById("q1").value;
+    const q2 = document.getElementById("q2").value;
+    const q3 = document.getElementById("q3").value;
+    const q4 = document.getElementById("q4").value.trim();
+
+    if (!name || !table || !q4) {
+      alert("Don't bottle it now 😂 Fill everything in first.");
+      return;
+    }
+
+    submitPredictions.disabled = true;
+    submitPredictions.textContent = "Locking them in…";
+
+    try {
+      const { error } = await supabaseClient
+        .from("wedding_predictions")
+        .insert({
+          guest_name: name,
+          table_number: Number(table),
+          predictions: {
+            biggest_lightweight: q1,
+            dancing_last: q2,
+            shoes_off_first: q3,
+            dancefloor_song: q4
+          }
+        });
+
+      if (error) throw error;
+
+      const predictionsMain = document.querySelector(".predictions-main");
+
+      predictionsMain.innerHTML = `
+        <div class="prediction-card prediction-success">
+          <div class="tick">✓</div>
+          <div class="modal-kicker">LOCKED IN</div>
+          <h2>Predictions submitted.</h2>
+          <p>
+            No changing your mind now.<br>
+            We'll see how badly you got it wrong later 😂
+          </p>
+          <button class="primary button back-home prediction-home">
+            Back to WedPlay
+          </button>
+        </div>
+      `;
+
+      document
+        .querySelector(".prediction-home")
+        .addEventListener("click", () => showPage("homePage"));
+
+    } catch (err) {
+      console.error("Prediction submission failed", err);
+      alert("Something went wrong. Try that again.");
+
+      submitPredictions.disabled = false;
+      submitPredictions.textContent = "Lock in my predictions";
+    }
+  });
+}

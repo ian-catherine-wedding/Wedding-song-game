@@ -283,23 +283,60 @@
     </header>
 
 
-    <main>
+    <main class="predictions-main">
 
-      <div class="coming-card">
+  <div class="prediction-intro">
+    Make your predictions before the first dance.
+    The closest table wins eternal bragging rights.
+  </div>
 
-        <span class="coming-number">03</span>
+  <div class="prediction-card">
+    <label>Your name</label>
+    <input id="predName" placeholder="e.g. Sarah & Dave">
 
-        <h2>Predictions</h2>
+    <label>Table</label>
+    <select id="predTable">
+      <option value="">Choose...</option>
+      <option>1</option><option>2</option><option>3</option>
+      <option>4</option><option>5</option><option>6</option>
+      <option>7</option>
+    </select>
+  </div>
 
-        <p>
-          Predictions will close before the first dance.
-        </p>
+  <div class="prediction-card">
+    <h3>🥂 Biggest lightweight?</h3>
+    <select id="q1">
+      <option>Bridesmaids</option>
+      <option>Groomsmen</option>
+      <option>Parents</option>
+      <option>Guests</option>
+    </select>
 
-        <div class="coming-badge">
-          COMING NEXT
-        </div>
+    <h3>🍻 Who'll still be dancing last?</h3>
+    <select id="q2">
+      <option>Ian</option>
+      <option>Catherine</option>
+      <option>Best Man</option>
+      <option>Bridesmaids</option>
+    </select>
 
-      </div>
+    <h3>💃 First person to lose their shoes?</h3>
+    <select id="q3">
+      <option>Bride</option>
+      <option>Bridesmaid</option>
+      <option>Groomsman</option>
+      <option>Someone's mum</option>
+    </select>
+
+    <h3>🎤 What song fills the dancefloor?</h3>
+    <input id="q4" placeholder="Your guess...">
+
+    <button id="submitPredictions" class="primary button">
+      Lock in my predictions
+    </button>
+  </div>
+
+</main>
 
     </main>
 
