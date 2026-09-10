@@ -750,4 +750,83 @@ if (challengeHome) {
 
     showPage("homePage");
   });
+}const coupleQuizForm = document.getElementById("coupleQuizForm");
+const quizTableNumber = document.getElementById("quizTableNumber");
+const quizResult = document.getElementById("quizResult");
+const quizSubmitButton = document.getElementById("quizSubmitButton");
+
+const quizAnswers = {
+  q1: "Ian",
+  q2: "Catherine",
+  q3: "Catherine",
+  q4: "Ian",
+  q5: "Who gets to tell everyone",
+  q6: "Catherine",
+  q7: "Catherine",
+  q8: "Ian",
+  q9: "Catherine",
+  q10: "Whoever wants the argument to end",
+  q11: "Looking for something Ian’s lost",
+  q12: "The dogs"
+};
+
+if (coupleQuizForm) {
+  coupleQuizForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const tableNumber = Number(quizTableNumber.value);
+
+    if (!tableNumber) {
+      alert("Choose your table first.");
+      return;
+    }
+
+    const answers = {};
+    let score = 0;
+
+    for (let i = 1; i <= 12; i++) {
+      const questionName = `q${i}`;
+      const selected = coupleQuizForm.querySelector(
+        `input[name="${questionName}"]:checked`
+      );
+
+      if (!selected) {
+        alert(`Answer question ${i} before submitting.`);
+        return;
+      }
+
+      answers[questionName] = selected.value;
+
+      if (selected.value === quizAnswers[questionName]) {
+        score++;
+      }
+    }
+
+    quizSubmitButton.disabled = true;
+    quizSubmitButton.textContent = "SUBMITTING...";
+
+    const { error } = await supabaseClient
+      .from("quiz_results")
+      .insert({
+        table_number: tableNumber,
+        answers: answers,
+        score: score
+      });
+
+    if (error) {
+      console.error("Quiz submission failed:", error);
+      alert("Couldn’t save your quiz. Try again.");
+      quizSubmitButton.disabled = false;
+      quizSubmitButton.textContent = "SUBMIT ANSWERS";
+      return;
+    }
+
+    quizResult.classList.remove("hidden");
+    quizResult.innerHTML = `
+      <h3>You scored ${score}/12</h3>
+      <p>Table ${tableNumber} — reputation officially recorded.</p>
+    `;
+
+    quizSubmitButton.textContent = "SUBMITTED";
+  });
 }

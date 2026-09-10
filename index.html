@@ -236,22 +236,121 @@
 
 
     <main>
+<div class="quiz-card">
 
-      <div class="coming-card">
+  <div class="quiz-intro">
+    <span class="coming-number">02</span>
+    <h2>Couple Quiz</h2>
+    <p>One answer sheet per table. No Googling. No asking the bride or groom.</p>
+  </div>
 
-        <span class="coming-number">02</span>
+  <div class="quiz-table-select">
+    <label for="quizTableNumber">Your table</label>
+    <select id="quizTableNumber">
+      <option value="">Choose table</option>
+      <option value="1">Table 1</option>
+      <option value="2">Table 2</option>
+      <option value="3">Table 3</option>
+      <option value="4">Table 4</option>
+      <option value="5">Table 5</option>
+      <option value="6">Table 6</option>
+      <option value="7">Table 7</option>
+    </select>
+  </div>
 
-        <h2>Couple Quiz</h2>
+  <form id="coupleQuizForm">
 
-        <p>
-          Questions are being prepared for the big day.
-        </p>
+    <div class="quiz-question">
+      <p>1. Who made the first move?</p>
+      <label><input type="radio" name="q1" value="Ian"> Ian</label>
+      <label><input type="radio" name="q1" value="Catherine"> Catherine</label>
+      <label><input type="radio" name="q1" value="Depends who you ask"> Depends who you ask</label>
+    </div>
 
-        <div class="coming-badge">
-          COMING NEXT
-        </div>
+    <div class="quiz-question">
+      <p>2. Who is more likely to say “I’m fine” when they are VERY clearly not fine?</p>
+      <label><input type="radio" name="q2" value="Ian"> Ian</label>
+      <label><input type="radio" name="q2" value="Catherine"> Catherine</label>
+      <label><input type="radio" name="q2" value="Both"> Both</label>
+    </div>
 
-      </div>
+    <div class="quiz-question">
+      <p>3. Who would you trust more to assemble IKEA furniture without causing a domestic?</p>
+      <label><input type="radio" name="q3" value="Ian"> Ian</label>
+      <label><input type="radio" name="q3" value="Catherine"> Catherine</label>
+      <label><input type="radio" name="q3" value="We’d just pay someone"> We’d just pay someone</label>
+    </div>
+
+    <div class="quiz-question">
+      <p>4. Who said “I love you” first?</p>
+      <label><input type="radio" name="q4" value="Ian"> Ian</label>
+      <label><input type="radio" name="q4" value="Catherine"> Catherine</label>
+      <label><input type="radio" name="q4" value="Neither remembers"> Neither remembers</label>
+    </div>
+
+    <div class="quiz-question">
+      <p>5. If Ian & Catherine won £1 million tonight, what would cause the first argument?</p>
+      <label><input type="radio" name="q5" value="What to spend it on"> What to spend it on</label>
+      <label><input type="radio" name="q5" value="Where to go on holiday"> Where to go on holiday</label>
+      <label><input type="radio" name="q5" value="Who gets to tell everyone"> Who gets to tell everyone</label>
+    </div>
+
+    <div class="quiz-question">
+      <p>6. Who is more likely to remember something said six months ago and bring it back up as evidence?</p>
+      <label><input type="radio" name="q6" value="Ian"> Ian</label>
+      <label><input type="radio" name="q6" value="Catherine"> Catherine</label>
+      <label><input type="radio" name="q6" value="Both keep receipts"> Both keep receipts</label>
+    </div>
+
+    <div class="quiz-question">
+      <p>7. Who is the better driver?</p>
+      <label><input type="radio" name="q7" value="Ian"> Ian</label>
+      <label><input type="radio" name="q7" value="Catherine"> Catherine</label>
+      <label><input type="radio" name="q7" value="We’re pleading the fifth"> We’re pleading the fifth</label>
+    </div>
+
+    <div class="quiz-question">
+      <p>8. You’ve agreed you’re NOT getting a takeaway tonight. Who cracks first?</p>
+      <label><input type="radio" name="q8" value="Ian"> Ian</label>
+      <label><input type="radio" name="q8" value="Catherine"> Catherine</label>
+      <label><input type="radio" name="q8" value="They simultaneously suggest it"> They simultaneously suggest it</label>
+    </div>
+
+    <div class="quiz-question">
+      <p>9. Who would last longer on a reality TV show before getting themselves cancelled?</p>
+      <label><input type="radio" name="q9" value="Ian"> Ian</label>
+      <label><input type="radio" name="q9" value="Catherine"> Catherine</label>
+      <label><input type="radio" name="q9" value="Neither makes it past episode one"> Neither makes it past episode one</label>
+    </div>
+
+    <div class="quiz-question">
+      <p>10. After a disagreement, who is more likely to apologise first?</p>
+      <label><input type="radio" name="q10" value="Ian"> Ian</label>
+      <label><input type="radio" name="q10" value="Catherine"> Catherine</label>
+      <label><input type="radio" name="q10" value="Whoever wants the argument to end"> Whoever wants the argument to end</label>
+    </div>
+
+    <div class="quiz-question">
+      <p>11. It’s the morning after the wedding. Where are Ian & Catherine most likely to be?</p>
+      <label><input type="radio" name="q11" value="Having a romantic newlywed breakfast"> Having a romantic newlywed breakfast</label>
+      <label><input type="radio" name="q11" value="Dying quietly with a coffee"> Dying quietly with a coffee</label>
+      <label><input type="radio" name="q11" value="Looking for something Ian’s lost"> Looking for something Ian’s lost</label>
+    </div>
+
+    <div class="quiz-question">
+      <p>12. FINAL QUESTION: Who is actually the boss of this relationship?</p>
+      <label><input type="radio" name="q12" value="Ian"> Ian</label>
+      <label><input type="radio" name="q12" value="Catherine"> Catherine</label>
+      <label><input type="radio" name="q12" value="The dogs"> The dogs</label>
+    </div>
+
+    <button type="submit" id="quizSubmitButton">SUBMIT ANSWERS</button>
+
+    <div id="quizResult" class="hidden"></div>
+
+  </form>
+
+</div>
 
     </main>
 
