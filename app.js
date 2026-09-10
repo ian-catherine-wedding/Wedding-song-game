@@ -340,22 +340,30 @@ const submitPredictions = document.getElementById("submitPredictions");
 
 if (submitPredictions) {
   submitPredictions.addEventListener("click", async () => {
-
     const name = document.getElementById("predName").value.trim();
     const table = document.getElementById("predTable").value;
 
     const q1 = document.getElementById("q1").value;
     const q2 = document.getElementById("q2").value;
     const q3 = document.getElementById("q3").value;
-    const q4 = document.getElementById("q4").value.trim();
+    const q4 = document.getElementById("q4").value;
+    const q5 = document.getElementById("q5").value;
+    const q6 = document.getElementById("q6").value;
+    const q7 = document.getElementById("q7").value;
+    const q8 = document.getElementById("q8").value;
+    const q9 = document.getElementById("q9").value;
+    const q10 = document.getElementById("q10").value.trim();
 
-    if (!name || !table || !q4) {
-      alert("Don't bottle it now 😂 Fill everything in first.");
+    if (
+      !name || !table || !q1 || !q2 || !q3 ||
+      !q4 || !q5 || !q6 || !q7 || !q8 || !q9 || !q10
+    ) {
+      alert("Don’t bottle it now 😂 Fill everything in first.");
       return;
     }
 
     submitPredictions.disabled = true;
-    submitPredictions.textContent = "Locking them in…";
+    submitPredictions.textContent = "Locking them in...";
 
     try {
       const { error } = await supabaseClient
@@ -365,44 +373,30 @@ if (submitPredictions) {
           table_number: Number(table),
           predictions: {
             biggest_lightweight: q1,
-            dancing_last: q2,
+            dancefloor_first: q2,
             shoes_off_first: q3,
-            dancefloor_song: q4
+            rowdiest_table: q4,
+            cries_first: q5,
+            happens_first: q6,
+            dancing_last_table: q7,
+            rogue_microphone: q8,
+            explain_tomorrow: q9,
+            biggest_dancefloor_song: q10
           }
         });
 
       if (error) throw error;
 
-      const predictionsMain = document.querySelector(".predictions-main");
-
-      predictionsMain.innerHTML = `
-        <div class="prediction-card prediction-success">
-          <div class="tick">✓</div>
-          <div class="modal-kicker">LOCKED IN</div>
-          <h2>Predictions submitted.</h2>
-          <p>
-            No changing your mind now.<br>
-            We'll see how badly you got it wrong later 😂
-          </p>
-          <button class="primary button back-home prediction-home">
-            Back to WedPlay
-          </button>
-        </div>
-      `;
-
-      document
-        .querySelector(".prediction-home")
-        .addEventListener("click", () => showPage("homePage"));
-
+      submitPredictions.textContent = "PREDICTIONS LOCKED 🔒";
     } catch (err) {
-      console.error("Prediction submission failed", err);
-      alert("Something went wrong. Try that again.");
-
+      console.error("Prediction submission failed:", err);
+      alert("Couldn’t save your predictions. Try again.");
       submitPredictions.disabled = false;
       submitPredictions.textContent = "Lock in my predictions";
     }
   });
-}// TABLE CHALLENGES
+}
+       // TABLE CHALLENGES
 
 const tableChallenges = {
   1: [
