@@ -400,165 +400,164 @@ if (submitPredictions) {
 
 const tableChallenges = {
   1: [
-    {
-      title: "Get the whole table in one photo",
-      text: "Nobody hiding. Nobody conveniently in the toilet."
-    },
-    {
-      title: "Get a photo with someone from another table",
-      text: "Bonus respect if you didn't know them before today."
-    },
-    {
-      title: "Get your whole table onto the dancefloor",
-      text: "Yes. Even the ones claiming they don't dance."
-    },
-    {
-      title: "Get a selfie with a member of the wedding party",
-      text: "Bride and groom do not count."
-    },
-    {
-      title: "Start a table-wide toast",
-      text: "Keep it short. Nobody asked for a second speech."
-    }
-  ],
+  {
+    title: "Get the whole table in one photo",
+    text: "Nobody hiding. Nobody conveniently in the toilet."
+  },
+  {
+    title: "Find someone from another table with the same first name",
+    text: "If you manage it, get a photo together."
+  },
+  {
+    title: "Get at least half your table on the dancefloor",
+    text: "The other half can provide moral support."
+  },
+  {
+    title: "Get a selfie with someone you've never met before",
+    text: "Congratulations. You've made a new friend."
+  },
+  {
+    title: "Start a table-wide toast",
+    text: "Short and sweet. Nobody asked for a second speech."
+  }
+],
 
-  2: [
-    {
-      title: "Recreate a famous album cover",
-      text: "Use as many people from your table as possible."
-    },
-    {
-      title: "Get someone from another table to join your photo",
-      text: "Recruitment is part of the challenge."
-    },
-    {
-      title: "Get the entire table dancing at once",
-      text: "No excuses."
-    },
-    {
-      title: "Take the most dramatic group selfie possible",
-      text: "Overacting is strongly encouraged."
-    },
-    {
-      title: "Get someone to raise a toast to your table",
-      text: "Preferably someone who isn't actually sitting with you."
-    }
-  ],
+ 2: [
+  {
+    title: "Get every bridesmaid on the dancefloor at the same time",
+    text: "You're bridesmaids. Attendance is compulsory."
+  },
+  {
+    title: "Recreate the most ridiculous bridesmaid photo possible",
+    text: "The wedding photographer would never approve."
+  },
+  {
+    title: "Convince a groomsman to copy your pose",
+    text: "The more ridiculous the pose, the better. Evidence required."
+  },
+  {
+    title: "Get Ian to join your table for a photo",
+    text: "Steal the groom. Catherine can have him back afterwards."
+  },
+  {
+    title: "Get Table 3 to cheer for Table 2",
+    text: "They must do it willingly. Mostly."
+  }
+],
 
-  3: [
-    {
-      title: "Get a photo of everyone pretending to argue",
-      text: "The more ridiculous, the better."
-    },
-    {
-      title: "Find another table captain and take a selfie",
-      text: "Diplomatic relations are encouraged."
-    },
-    {
-      title: "Get everyone at your table doing the same dance move",
-      text: "Coordination optional."
-    },
-    {
-      title: "Get a photo with somebody you've never met before",
-      text: "Make a new mate."
-    },
-    {
-      title: "Make the whole table cheer at the same time",
-      text: "Loud enough that another table notices."
-    }
-  ],
+3: [
+  {
+    title: "Get every groomsman on the dancefloor at the same time",
+    text: "No hiding at the bar."
+  },
+  {
+    title: "Recreate a boyband album cover",
+    text: "Take this far more seriously than necessary."
+  },
+  {
+    title: "Convince a bridesmaid to copy your pose",
+    text: "The more ridiculous the pose, the better. Evidence required."
+  },
+  {
+    title: "Get Catherine to join your table for a photo",
+    text: "You've stolen the bride. Try not to get Ian in trouble."
+  },
+  {
+    title: "Get Table 2 to cheer for Table 3",
+    text: "If the bridesmaids refuse, negotiate harder."
+  }
+],
 
   4: [
-    {
-      title: "Take a serious family portrait",
-      text: "Even if none of you are actually related."
-    },
-    {
-      title: "Get a photo with someone wearing the same colour",
-      text: "Close enough counts."
-    },
-    {
-      title: "Get the whole table doing a ridiculous pose",
-      text: "Absolutely no dignity required."
-    },
-    {
-      title: "Recruit somebody from another table for a dance",
-      text: "They must actually join in."
-    },
-    {
-      title: "Get a table selfie before somebody disappears",
-      text: "You know it's going to happen."
-    }
-  ],
+  {
+    title: "Take a serious family portrait",
+    text: "Even if none of you are actually related."
+  },
+  {
+    title: "Find someone wearing the same colour as someone on your table",
+    text: "Get them together for photographic evidence."
+  },
+  {
+    title: "Get the whole table doing a ridiculous pose",
+    text: "Absolutely no dignity required."
+  },
+  {
+    title: "Recruit someone from another table for a dance",
+    text: "They must actually join in."
+  },
+  {
+    title: "Get a photo with both Ian and Catherine",
+    text: "One photo. Both newlyweds. Choose your moment wisely."
+  }
+],
 
-  5: [
-    {
-      title: "Get everyone pointing at the same person",
-      text: "No explanation required."
-    },
-    {
-      title: "Take a photo with another table's captain",
-      text: "Keep your enemies close."
-    },
-    {
-      title: "Get the whole table onto the dancefloor",
-      text: "Yes, this includes the stubborn one."
-    },
-    {
-      title: "Get the funniest group photo you can",
-      text: "We'll judge this afterwards."
-    },
-    {
-      title: "Convince another table to cheer for yours",
-      text: "Bribery isn't technically forbidden."
-    }
-  ],
-
+ 5: [
+  {
+    title: "Get everyone pointing at the same person",
+    text: "No explanation required."
+  },
+  {
+    title: "Get the whole table in one photo",
+    text: "Everyone in. Nice and easy."
+  },
+  {
+    title: "Raise a glass together",
+    text: "Get a photo of the table raising a glass."
+  },
+  {
+    title: "Get a photo with Ian or Catherine",
+    text: "Either one counts. We're not making this difficult."
+  },
+  {
+    title: "Get three people from your table on the dancefloor",
+    text: "Only three. You've been given the easy table."
+  }
+],
   6: [
-    {
-      title: "Take a photo where nobody is looking at the camera",
-      text: "Make it look accidentally artistic."
-    },
-    {
-      title: "Get a selfie with somebody from the opposite side of the family",
-      text: "Time to mingle."
-    },
-    {
-      title: "Get everyone doing their worst dance move",
-      text: "Evidence required."
-    },
-    {
-      title: "Get a photo with somebody holding two drinks",
-      text: "Hydration. Obviously."
-    },
-    {
-      title: "Start a cheer for Ian & Catherine",
-      text: "Subtlety gets no points."
-    }
-  ],
+  {
+    title: "Take a photo where nobody is looking at the camera",
+    text: "Make it look accidentally artistic."
+  },
+  {
+    title: "Find the oldest and youngest person at your table",
+    text: "Get them together for a photo."
+  },
+  {
+    title: "Get everyone doing their worst dance move",
+    text: "Evidence required. Dignity optional."
+  },
+  {
+    title: "Get a photo with someone holding two drinks",
+    text: "Hydration. Obviously."
+  },
+  {
+    title: "Start a cheer for Ian & Catherine",
+    text: "Bonus respect if another table joins in."
+  }
+],
 
   7: [
-    {
-      title: "Take the most chaotic table photo",
-      text: "Normal smiles will not impress us."
-    },
-    {
-      title: "Get a selfie with another table",
-      text: "The more people squeezed in, the better."
-    },
-    {
-      title: "Get everybody at your table dancing",
-      text: "One song. Full attendance."
-    },
-    {
-      title: "Find someone you've never met and get a photo together",
-      text: "Congratulations, you've made a friend."
-    },
-    {
-      title: "Make another table applaud yours",
-      text: "How you achieve this is entirely your problem."
-    }
-  ]
+  {
+    title: "Take the most chaotic table photo",
+    text: "Normal smiles will not impress us."
+  },
+  {
+    title: "Get a selfie with another table",
+    text: "The more people squeezed in, the better."
+  },
+  {
+    title: "Get everybody at your table dancing",
+    text: "One song. Full attendance."
+  },
+  {
+    title: "Find someone you've never met and get a photo together",
+    text: "Congratulations, you've made a friend."
+  },
+  {
+    title: "Make another table applaud yours",
+    text: "How you achieve this is entirely your problem."
+  }
+]
 };
 
 const loadChallengesButton =
